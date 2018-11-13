@@ -15,7 +15,7 @@
 package handlers
 
 import (
-	"github.com/rmasclef/healthcheck/checks"
+	"github.com/etf1/healthcheck/checks"
 	"net/http"
 
 	"github.com/prometheus/client_golang/prometheus"
