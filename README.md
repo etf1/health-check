@@ -1,8 +1,8 @@
 # healthcheck
-[![Codecov](https://img.shields.io/codecov/c/github/rmasclef/healthcheck.svg?style=flat&maxAge=60)]()
-[![Build Status](https://travis-ci.org/rmasclef/healthcheck.svg?branch=master)](https://travis-ci.org/rmasclef/healthcheck)
-[![Go Report Card](https://goreportcard.com/badge/github.com/rmasclef/healthcheck)](https://goreportcard.com/report/github.com/rmasclef/healthcheck)
-[![GoDoc](https://godoc.org/github.com/rmasclef/healthcheck?status.svg)](https://godoc.org/github.com/rmasclef/healthcheck)
+[![Codecov](https://img.shields.io/codecov/c/github/etf1/healthcheck.svg?style=flat&maxAge=60)]()
+[![Build Status](https://travis-ci.org/etf1/healthcheck.svg?branch=master)](https://travis-ci.org/etf1/healthcheck)
+[![Go Report Card](https://goreportcard.com/badge/github.com/etf1/healthcheck)](https://goreportcard.com/report/github.com/etf1/healthcheck)
+[![GoDoc](https://godoc.org/github.com/etf1/healthcheck?status.svg)](https://godoc.org/github.com/etf1/healthcheck)
 
 Healthcheck is a library for implementing Kubernetes [liveness and readiness](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/) probe handlers in your Go application.
 
@@ -18,7 +18,7 @@ Healthcheck is a library for implementing Kubernetes [liveness and readiness](ht
 
 ## Usage
 
-See the [GoDoc examples](https://godoc.org/github.com/rmasclef/healthcheck) for more detail.
+See the [GoDoc examples](https://godoc.org/github.com/etf1/healthcheck) for more detail.
 
  - Install with `go get` or your favorite Go dependency manager: `go get -u github.com/heptiolabs/healthcheck`
 
