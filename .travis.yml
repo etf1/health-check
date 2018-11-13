@@ -1,5 +1,5 @@
 language: go
-go_import_path: github.com/rmasclef/healthcheck
+go_import_path: github.com/etf1/healthcheck
 go:
   - 1.11.x
 
@@ -10,4 +10,7 @@ install:
     && dep ensure -vendor-only -v
 
 script:
-  - go test -v -cover .
+  - go test -v -race -coverprofile=coverage.txt -covermode=atomic ./...
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
