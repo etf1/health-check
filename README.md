@@ -99,7 +99,7 @@ When you run `go http.ListenAndServe("0.0.0.0:8086", health)`, two HTTP endpoint
   - **`/ready`**: readiness endpoint (HTTP 200 if healthy, HTTP 503 if unhealthy)
 
 ### Custom routes
-You can also use other routes than **/live** & **/ready** by setting the `HEALTH_LIVENESS_PATTERN` and/or `HEALTH_READYNESS_PATTERN` env var on your application
+You can also use other routes than **/live** & **/ready** by setting the `HEALTH_LIVENESS_ROUTE` and/or `HEALTH_READINESS_ROUTE` env var on your application
 
 ### Endpoint response
 Pass the `?full=1` query parameter to see the full check results as JSON. These are omitted by default for performance.

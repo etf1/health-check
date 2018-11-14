@@ -23,11 +23,11 @@ import (
 	"github.com/etf1/health-check/checks"
 )
 
-const livenessPatternEnvVar = "HEALTH_LIVENESS_PATTERN"
-const readynessPatternEnvVar = "HEALTH_READYNESS_PATTERN"
+const livenessRouteEnvVar = "HEALTH_LIVENESS_ROUTE"
+const readinessRouteEnvVar = "HEALTH_READINESS_ROUTE"
 
-const defaultLivenessPattern = "/live"
-const defaultReadynessPattern = "/ready"
+const defaultLivenessRoute = "/live"
+const defaultReadinessRoute = "/ready"
 
 type basicHandler struct {
 	http.ServeMux
@@ -50,10 +50,12 @@ func NewHandler(options Options) Handler {
 	if options.Metadata != nil { h.metadata = options.Metadata }
 
 	// Get live & ready endpoint patterns from env vars
-	livenessPattern, ok := os.LookupEnv(livenessPatternEnvVar)
-	readynessPattern, ok := os.LookupEnv(readynessPatternEnvVar)
-	if !ok { livenessPattern = defaultLivenessPattern }
-	if !ok { readynessPattern = defaultReadynessPattern }
+	livenessPattern, ok := os.LookupEnv(livenessRouteEnvVar)
+	readynessPattern, ok := os.LookupEnv(readinessRouteEnvVar)
+	if !ok { livenessPattern = defaultLivenessRoute
+	}
+	if !ok { readynessPattern = defaultReadinessRoute
+	}
 
 	h.Handle(livenessPattern, http.HandlerFunc(h.LiveEndpoint))
 	h.Handle(readynessPattern, http.HandlerFunc(h.ReadyEndpoint))
