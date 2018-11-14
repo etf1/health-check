@@ -1,13 +1,15 @@
 language: go
 go_import_path: github.com/etf1/healthcheck
 go:
-  - 1.11.x
+  - 1.*
 
 sudo: false
 
+before_install:
+  - docker-compose -f docker/docker-compose-test.yaml up -d
+
 install:
-  - go get -u github.com/golang/dep/cmd/dep
-    && dep ensure -vendor-only -v
+  - go get -u github.com/golang/dep/cmd/dep && dep ensure -vendor-only -v
 
 script:
   - go test -v -race -coverprofile=coverage.txt -covermode=atomic ./...

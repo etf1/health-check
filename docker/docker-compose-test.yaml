@@ -1,0 +1,45 @@
+version: '3'
+services:
+  twem-proxy:
+    image: malexer/twemproxy:latest
+    environment:
+      REDIS_SERVERS: "redis-a:6379:1, redis-b:6379:1"
+    ports:
+      - "6380"
+    networks:
+      test-network:
+        aliases:
+          - twem-proxy
+  redis-a:
+    image: redis:3.2-alpine
+    ports:
+      - "6379"
+    networks:
+      test-network:
+        aliases:
+          - redis-a
+  redis-b:
+    image: redis:3.2-alpine
+    ports:
+      - "6379"
+    networks:
+      test-network:
+        aliases:
+          - redis-b
+  postgres:
+    image: postgres:9.5-alpine
+    volumes:
+      - ./.:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: test
+    ports:
+      - "5432"
+    networks:
+      test-network:
+        aliases:
+          - postgres
+networks:
+  test-network:
+    driver: bridge
