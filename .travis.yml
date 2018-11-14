@@ -1,7 +1,7 @@
 language: go
 go_import_path: github.com/etf1/healthcheck
 go:
-  - 1.*
+  - 1.x
 
 sudo: false
 
@@ -10,6 +10,11 @@ before_install:
 
 install:
   - go get -u github.com/golang/dep/cmd/dep && dep ensure -vendor-only -v
+
+before_script:
+  - export HEALTH_GO_REDIS_PROXY_ADDR="`docker-compose -f docker/docker-compose-test.yaml port twem-proxy 6380`"
+  - export HEALTH_GO_REDIS_ADDR="`docker-compose -f docker/docker-compose-test.yaml port redis-a 6379`"
+  - export HEALTH_GO_POSTGRES_ADDR="postgres://test:test@`docker-compose -f docker/docker-compose-test.yaml port postgres 5432`/test?sslmode=disable"
 
 script:
   - go test -v -race -coverprofile=coverage.txt -covermode=atomic ./...
