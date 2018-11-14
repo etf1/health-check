@@ -1,5 +1,5 @@
 language: go
-go_import_path: github.com/etf1/healthcheck
+go_import_path: github.com/etf1/health-check
 go:
   - 1.x
 

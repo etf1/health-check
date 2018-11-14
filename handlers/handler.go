@@ -20,7 +20,7 @@ import (
 	"os"
 	"sync"
 
-	"github.com/etf1/healthcheck/checks"
+	"github.com/etf1/health-check/checks"
 )
 
 const livenessPatternEnvVar = "HEALTH_LIVENESS_PATTERN"

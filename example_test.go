@@ -28,8 +28,8 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 
-	"github.com/etf1/healthcheck/checks"
-	"github.com/etf1/healthcheck/handlers"
+	"github.com/etf1/health-check/checks"
+	"github.com/etf1/health-check/handlers"
 )
 
 func Example() {

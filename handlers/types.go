@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"github.com/etf1/healthcheck/checks"
+	"github.com/etf1/health-check/checks"
 	"net/http"
 )
 
