@@ -1,6 +1,6 @@
 # healthcheck
-[![Codecov](https://img.shields.io/codecov/c/github/etf1/healthcheck.svg?style=flat&maxAge=60)]()
-[![Build Status](https://travis-ci.org/etf1/healthcheck.svg?branch=master)](https://travis-ci.org/etf1/healthcheck)
+[![Codecov](https://img.shields.io/codecov/c/github/etf1/health-check.svg?style=flat&maxAge=60)]()
+[![Build Status](https://travis-ci.org/etf1/health-check.svg?branch=master)](https://travis-ci.org/etf1/health-check)
 [![Go Report Card](https://goreportcard.com/badge/github.com/etf1/health-check)](https://goreportcard.com/report/github.com/etf1/health-check)
 [![GoDoc](https://godoc.org/github.com/etf1/health-check?status.svg)](https://godoc.org/github.com/etf1/health-check)
 
